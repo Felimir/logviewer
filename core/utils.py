@@ -108,7 +108,7 @@ def authrequired():
                 if str(app.bot_id) != document.get("bot_id"):
                     abort(
                         401,
-                        message="Your account does not have permission to view this page.",
+                        message="Tu cuenta no tiene el permiso suficiente para ver esta página",
                     )
                 whitelist.extend(document.get("oauth_whitelist", []))
 
@@ -121,7 +121,7 @@ def authrequired():
                 return await func(request, document)
 
             abort(
-                401, message="Your account does not have permission to view this page."
+                401, message="Tu cuenta no tiene el permiso suficiente para ver esta página."
             )
 
         return wrapper
